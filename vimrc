@@ -1,3 +1,8 @@
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" Set up vundle
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -10,22 +15,21 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'majutsushi/tagbar'
+Bundle 'Blackrush/vim-gocode'
+"Bundle 'majutsushi/tagbar'
 Bundle 'altercation/vim-colors-solarized'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
 
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
+
 filetype plugin indent on     " required!
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " customize search
 set hlsearch
@@ -109,3 +113,6 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 filetype plugin on
 filetype indent on
 autocmd FileType go compiler go
+
+set background=dark
+colorscheme torte
