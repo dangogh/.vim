@@ -11,26 +11,23 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'Blackrush/vim-gocode'
-"Bundle 'majutsushi/tagbar'
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'Blackrush/vim-gocode'
+"Plugin 'majutsushi/tagbar'
+"Plugin 'altercation/vim-colors-solarized'
 
 " Github repos of the user 'vim-scripts'
 " => can omit the username part
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
+"Plugin 'L9'
+"Plugin 'FuzzyFinder'
 
 " non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
+"Plugin 'git://git.wincent.com/command-t.git'
 " ...
-
-
-filetype plugin indent on     " required!
 
 " customize search
 set hlsearch
@@ -103,7 +100,6 @@ endif
 " Vim plugins for Go (http://golang.org)
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
-filetype off
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
@@ -111,8 +107,6 @@ syntax on
 
 " go fmt before saving
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
-filetype plugin on
-filetype indent on
 autocmd FileType go compiler go
 
 set background=dark
