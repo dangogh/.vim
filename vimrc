@@ -3,12 +3,37 @@
 set nocompatible
 set autochdir
 
+set autoindent
+set backup
+set autochdir
+set writebackup
+" set autowriteall
+set backspace=indent,eol,start
+set expandtab
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+set laststatus=2
+set lazyredraw
+" set makeprg=...
+set mousehide
+set number
+set ruler
+set showcmd
+set showmode
+set sidescroll=1
+set smarttab
+set suffixes=.bak,.swp,.bak,~,.o
+set wildchar=<TAB>
+" set nowrap
+set wrapmargin=1
+
+""""""""""""""""""""""""""""""""""""""""
 " Set up vundle
 filetype off                   " required!
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
 " let Vundle manage Vundle
 " required! 
 Plugin 'gmarik/vundle'
@@ -30,7 +55,6 @@ Plugin 'Blackrush/vim-gocode'
 " ...
 
 " customize search
-set hlsearch
 set ignorecase
 set incsearch
 
@@ -55,13 +79,6 @@ if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
@@ -82,11 +99,6 @@ if has("autocmd")
     \ endif
 
   augroup END
-
-else
-
-  set autoindent		" always set autoindenting on
-
 endif " has("autocmd")
 
 " Convenient command to see the difference between the current buffer and the
