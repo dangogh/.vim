@@ -49,6 +49,8 @@ Plugin 'Blackrush/vim-gocode'
 " => can omit the username part
 "Plugin 'L9'
 "Plugin 'FuzzyFinder'
+Plugin 'genutils'
+Plugin 'perforce'
 
 " non github repos
 "Plugin 'git://git.wincent.com/command-t.git'
