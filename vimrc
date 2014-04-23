@@ -1,11 +1,7 @@
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
 set autochdir
-
 set autoindent
 set backup
-set autochdir
 set writebackup
 " set autowriteall
 set backspace=indent,eol,start
@@ -23,11 +19,10 @@ set ruler
 set showcmd
 set showmode
 set sidescroll=1
+set wrapmargin=1
 set smarttab
 set suffixes=.bak,.swp,.bak,~,.o
 set wildchar=<TAB>
-" set nowrap
-set wrapmargin=1
 
 """"""""""""""""""""""""""""""""""""""""
 " Set up vundle
@@ -51,23 +46,15 @@ Plugin 'Blackrush/vim-gocode'
 "Plugin 'FuzzyFinder'
 Plugin 'genutils'
 Plugin 'perforce'
+" enhanced autocomplete
+Plugin 'VimCompletesMe'
 
 " non github repos
 "Plugin 'git://git.wincent.com/command-t.git'
 " ...
 
-" customize search
-set ignorecase
-set incsearch
-
-" edit
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
-set backup		" keep a backup file
 
 set history=50		" keep 50 lines of command line history
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 let &guioptions = substitute(&guioptions, "t", "", "g")
