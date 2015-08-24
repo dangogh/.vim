@@ -24,7 +24,7 @@ set suffixes=.bak,.swp,.bak,~,.o
 set wildchar=<TAB>
 
 """"""""""""""""""""""""""""""""""""""""
-" Set up vundle
+" VUNDLE {
 " git clone git@github.com:gmarik/Vundle.vim ~/.vim/bundle/Vundle
 " :PluginInstall
 set nocompatible
@@ -47,13 +47,65 @@ Plugin 'Blackrush/vim-gocode'
 "Plugin 'L9'
 "Plugin 'FuzzyFinder'
 "Plugin 'genutils'
-"Plugin 'perforce'
-" enhanced autocomplete
 Plugin 'VimCompletesMe'
+Plugin 'git://github.com/rdunklau/vim-perltidy.git'
+Plugin 'git://github.com/vim-scripts/perlprove.vim.git'
+Plugin 'git://github.com/srooloose/nerdtree.git'
+Plugin 'git://github.com/scrooloose/nerdcommenter.git'
 
 " non github repos
 "Plugin 'git://git.wincent.com/command-t.git'
 " ...
+" { vundle from dew
+"Plugin 'git://github.com/rstacruz/sparkup'
+"
+"" vim-scripts repos
+"Plugin 'https://github.com/dewrich/unite.vim.git'
+"Plugin 'https://github.com/dewrich/neomru.vim'
+"Plugin 'git://github.com/dewrich/L9.git'
+"Plugin 'git://github.com/dewrich/ack.vim.git'
+"Plugin 'git://github.com/dewrich/indentpython.vim.git'
+""Plugin 'git://github.com/dewrich/snipmate.vim.git'
+"Plugin 'git://github.com/dewrich/supertab.git'
+"Plugin 'git://github.com/dewrich/syntastic.git'
+"Plugin 'git://github.com/dewrich/tlib_vim.git'
+"Plugin 'git://github.com/dewrich/vim-fugitive.git'
+""Plugin 'git://github.com/dewrich/vimfiles.git'
+"Plugin 'git://github.com/dewrich/socketIO-client.git'
+"Plugin 'https://github.com/dewrich/mru.vim.git'
+"Plugin 'git://github.com/benmills/vimux.git'
+"Plugin 'git://github.com/fatih/vim-go.git'
+"Plugin 'git://github.com/Valloric/YouCompleteMe.git'
+"Plugin 'git://github.com/golang/lint.git'
+""Plugin 'git://github.com/Lokaltog/powerline.git'
+"Plugin 'git://github.com/bling/vim-airline.git'
+"Plugin 'git://github.com/SirVer/ultisnips.git'
+"Plugin 'git://github.com/dewrich/vim-easygrep.git'
+"Plugin 'git://github.com/honza/vim-snippets.git'
+"Plugin 'git://github.com/tpope/vim-rbenv.git'
+"Plugin 'git://github.com/michalliu/sourcebeautify.vim.git'
+""Plugin 'git://github.com/Yggdroot/indentLine'
+""Plugin 'git://github.com/kien/ctrlp.vim.git'
+"Plugin 'git://github.com/vim-scripts/ScrollColors.git'
+"Plugin 'git://github.com/Rykka/InstantRst.git'
+"Plugin 'git://github.com/Rykka/riv.vim.git'
+"Plugin 'git://github.com/Rykka/rhythm.css.git'
+"Plugin 'git://github.com/airblade/vim-gitgutter.git'
+"Plugin 'git://github.com/tpope/vim-surround.git'
+"Plugin 'git://github.com/tpope/vim-repeat.git'
+"Plugin 'git://github.com/bronson/vim-visual-star-search.git'
+"Plugin 'mattn/webapi-vim'
+"Plugin 'cirla/vim-giphy'
+""Plugin 'git://github.com/Raimondi/delimitMate.git'
+"Plugin 'git://github.com/jiangmiao/auto-pairs.git'
+"Plugin 'git://github.com/nelstrom/vim-qargs.git'
+""Plugin 'git://github.com/davidpthomas/vim4rally.git'
+"Plugin 'git://github.com/vim-ruby/vim-ruby.git'
+"Plugin 'git://github.com/vim-scripts/MultipleSearch.git'
+
+    call vundle#end()
+" } vundle from dew
+" } VUNDLE
 
 
 set history=5000
