@@ -68,6 +68,8 @@ inoremap <C-U> <C-G>u<C-U>
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
+  " make y/p work from iterm selection
+  set clipboard=unnamed
 endif
 
 " Setting up the directories {
