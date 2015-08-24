@@ -1,4 +1,3 @@
-set nocompatible
 set autochdir
 set autoindent
 set backup
@@ -26,12 +25,15 @@ set wildchar=<TAB>
 
 """"""""""""""""""""""""""""""""""""""""
 " Set up vundle
+" git clone git@github.com:gmarik/Vundle.vim ~/.vim/bundle/Vundle
+" :PluginInstall
+set nocompatible
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle/
+call vundle#begin()
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle'
 
 " My Bundles here:
 "
@@ -44,8 +46,8 @@ Plugin 'Blackrush/vim-gocode'
 " => can omit the username part
 "Plugin 'L9'
 "Plugin 'FuzzyFinder'
-Plugin 'genutils'
-Plugin 'perforce'
+"Plugin 'genutils'
+"Plugin 'perforce'
 " enhanced autocomplete
 Plugin 'VimCompletesMe'
 
@@ -54,7 +56,7 @@ Plugin 'VimCompletesMe'
 " ...
 
 
-set history=50		" keep 50 lines of command line history
+set history=5000
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -68,8 +70,26 @@ if has('mouse')
   set mouse=a
 endif
 
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
+" Setting up the directories {
+  set undofile                       " so is persistent undo ...
+  set copyindent                  " (ci) when auto-indenting, use the indenting format of the previous line
+  set undolevels=1000                " maximum number of changes that can be undone
+  set undoreload=10000               " maximum number lines to save for undo on a buffer reload
+  set backup
+  set backupdir=$HOME/.vimbackup/    " but not when they clog .
+  set directory=$HOME/.vimswap/      " Same for swap files
+  set viewdir=$HOME/.vimviews/       " same for view files
+  set undodir=$HOME/.vimviews/       " same for view files
+  "" Creating directories if they don't exist
+  silent execute '!mkdir -p $HOME/.vimbackup'
+  silent execute '!mkdir -p $HOME/.vimswap'
+  silent execute '!mkdir -p $HOME/.vimviews'
+  "au BufWinLeave * silent! mkview    " make vim save view (state) (folds, cursor, etc)
+  "au BufWinEnter * silent! loadview  " make vim load view (state) (folds, cursor, etc)
+" }
+
+
+" {
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
@@ -88,7 +108,7 @@ if has("autocmd")
     \ endif
 
   augroup END
-endif " has("autocmd")
+" }
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -112,3 +132,49 @@ autocmd FileType go compiler go
 
 set background=dark
 colorscheme torte
+
+" Vim UI {
+  " Favorite color schemes
+  "set showbreak=->                    " a marker to highlight wrapped lines
+  set tabstop=4                        " tabstops
+  set shiftwidth=4                     " shift width
+  "set expandtab                        " turn ^T to spaces
+  set tabpagemax=15                    " only show 15 tabs
+  set showmode                         " display the current mode
+  set cursorline                       " highlight current line
+  hi cursorline guibg=#333333          " highlight bg color of current line
+  "set cursorcolumn                       " highlight current column
+  hi CursorColumn cterm=NONE ctermbg=236 ctermfg=NONE guibg=lightblue ctermbg=lightgray 
+  hi CursorLine   cterm=NONE ctermbg=236 ctermfg=NONE gui=NONE guibg=#2d2d2d guifg=NONE
+" only  turn on for current split window
+augroup CursorLineOnlyInActiveWindow
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
+augroup END
+
+  if has('cmdline_info')
+    set ruler                          " show the ruler
+    set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+    set showcmd                        " show partial commands in status line and
+                                       " selected characters/lines in visual mode
+  endif
+
+  set linespace=0                 " No extra spaces between rows
+  "set nu                          " Line numbers on
+  set showmatch                   " show matching brackets/parenthesis
+  set incsearch                   " find as you type search
+  set hlsearch                    " highlight search terms
+  set winminheight=0              " windows can be 0 line high 
+  set ignorecase                  " case insensitive search
+  set smartcase                   " case sensitive when uc present
+  set wildmenu                    " show list instead of just completing
+  set wildmode=list:longest,full  " command <Tab> completion, list matches, then longest common part, then all.
+  "set whichwrap=b,s,h,l,<,>,[,]   " backspace and cursor keys wrap to
+  set scrolljump=5                " lines to scroll when cursor leaves screen
+  "set scrolloff=3                 " minimum lines to keep above and below cursor
+  set nofoldenable                 " turn off autofolding
+  "set gdefault                    " the /g flag on :s substitutions by default
+  "set list
+   "set listchars=tab:>.,trail:.,extends:#,nbsp:. " Highlight problematic whitespace
+" }
