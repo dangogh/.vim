@@ -1,10 +1,9 @@
 set autochdir
-set autoindent
 set backup
 set writebackup
 " set autowriteall
 set backspace=indent,eol,start
-set expandtab
+"set expandtab
 set hlsearch
 set incsearch
 set smartcase
@@ -19,7 +18,7 @@ set showcmd
 set showmode
 set sidescroll=1
 set wrapmargin=1
-set smarttab
+"set smarttab
 set suffixes=.bak,.swp,.bak,~,.o
 set wildchar=<TAB>
 
@@ -191,7 +190,7 @@ colorscheme torte
   " Favorite color schemes
   "set showbreak=->                    " a marker to highlight wrapped lines
   set tabstop=4                        " tabstops
-  set shiftwidth=4                     " shift width
+  set shiftwidth=2                     " shift width
   "set expandtab                        " turn ^T to spaces
   set tabpagemax=15                    " only show 15 tabs
   set showmode                         " display the current mode
