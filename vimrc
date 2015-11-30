@@ -49,8 +49,9 @@ Plugin 'Blackrush/vim-gocode'
 Plugin 'VimCompletesMe'
 Plugin 'git://github.com/rdunklau/vim-perltidy.git'
 Plugin 'git://github.com/vim-scripts/perlprove.vim.git'
-Plugin 'git://github.com/srooloose/nerdtree.git'
+Plugin 'git://github.com/scrooloose/nerdtree.git'
 Plugin 'git://github.com/scrooloose/nerdcommenter.git'
+Plugin 'git://github.com/tpope/vim-fugitive.git'
 
 " non github repos
 "Plugin 'git://git.wincent.com/command-t.git'
